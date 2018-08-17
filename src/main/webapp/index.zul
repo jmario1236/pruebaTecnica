@@ -1,64 +1,33 @@
 <?page title="VideoCapitol - Inicio" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css"	href="/assets/css/main.css" ?>
 <zk>
 	<window border="none" width="100%" height="100%"
-					id="windowSearchCar"
-					apply="com.xoftixtest.videocapitol.controller.UsuarioController">
-					<panel id="panelRegistrar" width="99%" height="100%"
-						border="normal" style="overflow: scroll" collapsible="false">
-						<caption label="Registro de Usuario"></caption>
-						<panelchildren style="overflow: scroll;">
-							<groupbox id="groupboxInfo"
-								closable="false">
-								<caption label="Información" />
-								<grid sclass="form-entry">
-									<columns>
-										<column width="200px" />
-										<column />
-									</columns>
-									<rows>
-										<row>
-											<label value="Cedula" />
-											<textbox id="cedula"
-												mold="rounded" width="200px" maxlength="15" />
-										</row>
-										<row>
-											<label value="Nombre" />
-											<textbox id="nombre"
-												mold="rounded" width="200px" maxlength="150" />
-										</row>
-										<row>
-											<label value="Dirección" />
-											<textbox id="direccion"
-												mold="rounded" width="200px" maxlength="50" cols="40"
-												rows="5" />
-										</row>
-										<row>
-											<label value="Teléfono" />
-											<textbox id="telefono"
-												maxlength="10" mold="rounded" width="200px" />
-										</row>
-										<row>
-											<label value="Cuenta" />
-											<textbox id="username"
-												maxlength="45" mold="rounded" width="200px" />
-										</row>
-										<row>
-											<label value="Contraseña" />
-											<textbox id="pass"
-												maxlength="15" type="password" mold="rounded" width="200px" />
-										</row>
-										<row>
-											<div align="center">
-												<button id="registrar"
-													label="Guardar" />
-												<button id="buscar"
-													label="Buscar" />
-											</div>
-										</row>
-									</rows>
-								</grid>
-							</groupbox>
-						</panelchildren>
-					</panel>
-				</window>
+					id="windowInicio"
+					>
+		<borderlayout height="100%" width="100%">
+			<north size="18%" border="0">
+		        <borderlayout height="100%" width="100%">
+		        	<west size="70%" border="0" style="background:#008db7;" ></west>
+		        	<east size="30%" border="0"  style="background:#008db7;" >
+		        		<hlayout vflex="1" spacing="15px">
+		        			<button label="Iniciar Sesion" />
+		        			<button label="Registrarse" />
+		        		</hlayout>
+		        	</east>
+		        </borderlayout>
+		    </north>
+		    <south border="0" style="background:#112f37;color:white;">
+		    	<vbox align="center" pack="center" height="90%" width="100%">
+		    		<div style="background:#112f37;color:white;">VideoCapitol - 2018</div>
+		    	</vbox>
+		        
+		    </south>
+		    <center border="0">
+		        <div>C</div>
+		    </center>
+		    
+			
+		</borderlayout>			
+					
+	</window>
 </zk>

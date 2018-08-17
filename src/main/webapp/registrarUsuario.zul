@@ -1,0 +1,64 @@
+<?page title="VideoCapitol - Inicio" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" width="100%" height="100%"
+					id="windowSearchCar"
+					apply="com.xoftixtest.videocapitol.controller.UsuarioController">
+					<panel id="panelRegistrar" width="99%" height="100%"
+						border="normal" style="overflow: scroll" collapsible="false">
+						<caption label="Registro de Usuario"></caption>
+						<panelchildren style="overflow: scroll;">
+							<groupbox id="groupboxInfo"
+								closable="false">
+								<caption label="Información" />
+								<grid sclass="form-entry">
+									<columns>
+										<column width="200px" />
+										<column />
+									</columns>
+									<rows>
+										<row>
+											<label value="Cedula" />
+											<textbox id="cedula"
+												mold="rounded" width="200px" maxlength="15" />
+										</row>
+										<row>
+											<label value="Nombre" />
+											<textbox id="nombre"
+												mold="rounded" width="200px" maxlength="150" />
+										</row>
+										<row>
+											<label value="Dirección" />
+											<textbox id="direccion"
+												mold="rounded" width="200px" maxlength="50" cols="40"
+												rows="5" />
+										</row>
+										<row>
+											<label value="Teléfono" />
+											<textbox id="telefono"
+												maxlength="10" mold="rounded" width="200px" />
+										</row>
+										<row>
+											<label value="Cuenta" />
+											<textbox id="username"
+												maxlength="45" mold="rounded" width="200px" />
+										</row>
+										<row>
+											<label value="Contraseña" />
+											<textbox id="pass"
+												maxlength="15" type="password" mold="rounded" width="200px" />
+										</row>
+										<row>
+											<div align="center">
+												<button id="registrar"
+													label="Guardar" />
+												<button id="buscar"
+													label="Buscar" />
+											</div>
+										</row>
+									</rows>
+								</grid>
+							</groupbox>
+						</panelchildren>
+					</panel>
+				</window>
+</zk>

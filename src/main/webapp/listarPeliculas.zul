@@ -1,0 +1,49 @@
+
+<zk>
+
+<panel id="panel" framable="true" width="250px" height="300px"
+	title="Panel"
+	border="normal"
+	>
+<panelchildren>
+<borderlayout height="100%" width="100%">
+
+<center>
+<borderlayout width="100px" height="100px">
+  
+    <south size="40%">
+        
+    </south>
+  
+    <east size="60%">
+        <vlayout>
+
+<label value="Cedula :" />
+<label style="word-wrap: break-word;" value="Cedsdfsdfsdfsdfssdfsdfsdfsula" />
+
+
+<label value="Cedula :" />
+<label value="Cedula" />
+
+
+<label value="Cedula :" />
+<label value="Cedula" />
+
+</vlayout>
+    </east>
+    <west size="40%">
+       
+    </west>
+</borderlayout>
+
+</center>
+<south size="15%">
+<vbox align="center" pack="center" height="100%" width="100%">
+<button label="Rerservar!" />
+</vbox>
+</south>
+
+</borderlayout>
+</panelchildren>	
+</panel>
+</zk>
