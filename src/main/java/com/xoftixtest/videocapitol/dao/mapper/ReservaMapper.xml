@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper
+		PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+		"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.xoftixtest.videocapitol.dao.mapper.ReservaMapper">
+
+<resultMap id="reservaResult" type="Reserva">
+		<result property="id" column="id" />
+		<result property="fechaReservaPelicula" column="fechaReservaPelicula" />
+		<result property="fechaRetornoPelicula" column="fechaRetornoPelicula" />
+		<association property='usuario' resultMap='userResult'/>
+		<association property='pelicula' resultMap='movieResult'/>
+		
+</resultMap>
+
+<resultMap id="movieResult" type="Pelicula">
+		<result property="id" column="pelicula_id" />
+		<result property="titulo" column="titulo" />
+		<result property="descripcion" column="descripcion" />
+</resultMap>
+
+<resultMap id="userResult" type="Usuario">
+	<result property="id" column="user_id" />
+	<result property="cedula" column="cedula" />
+	<result property="nombre" column="nombre" />
+	<result property="direccion" column="direccion" />
+	<result property="telefono" column="telefono" />
+</resultMap>
+
+<select id="listar" resultMap="reservaResult">
+		SELECT
+		res.id,
+		res.fechaReservaPelicula,
+		res.fechaRetornoPelicula,
+		pelicula.id,
+		pelicula.titulo,
+		pelicula.descripcion,
+		user.id,
+		user.cedula,
+		user.nombre,
+		user.direccion,
+		user.telefono
+		FROM RESERVA res 
+		JOIN USUARIO user ON
+		res.user_id = user.id
+		JOIN PELICULA pelicula ON
+		res.pelicula_id = pelicula.id
+</select>
+
+<select id="listarPorUsuario" resultMap="reservaResult" parameterType="Usuario">
+		SELECT
+		res.id,
+		res.fechaReservaPelicula,
+		res.fechaRetornoPelicula,
+		pelicula.id,
+		pelicula.titulo,
+		pelicula.descripcion,
+		user.id,
+		user.cedula,
+		user.nombre,
+		user.direccion,
+		user.telefono
+		FROM RESERVA res 
+		JOIN USUARIO user ON
+		res.user_id = user.id
+		JOIN PELICULA pelicula ON
+		res.pelicula_id = pelicula.id
+		WHERE user.cedula = #{cedula}
+</select>
+
+<insert id="insertar" parameterType="Reserva" useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO RESERVA (fechaReservaPelicula,fechaRetornoPelicula,
+		user_id, pelicula_id )
+		VALUES ( #{fechaReservaPelicula}, #{fechaRetornoPelicula},
+		#{usuario.id},
+		#{pelicula.id} )
+</insert>
+
+
+</mapper>

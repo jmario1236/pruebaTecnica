@@ -1,64 +1,42 @@
-<?page title="VideoCapitol - Inicio" contentType="text/html;charset=UTF-8"?>
 <zk>
-	<window border="none" width="100%" height="100%"
-					id="windowSearchCar"
-					apply="com.xoftixtest.videocapitol.controller.UsuarioController">
-					<panel id="panelRegistrar" width="99%" height="100%"
-						border="normal" style="overflow: scroll" collapsible="false">
-						<caption label="Registro de Usuario"></caption>
-						<panelchildren style="overflow: scroll;">
-							<groupbox id="groupboxInfo"
-								closable="false">
-								<caption label="Información" />
-								<grid sclass="form-entry">
-									<columns>
-										<column width="200px" />
-										<column />
-									</columns>
-									<rows>
-										<row>
-											<label value="Cedula" />
-											<textbox id="cedula"
-												mold="rounded" width="200px" maxlength="15" />
-										</row>
-										<row>
-											<label value="Nombre" />
-											<textbox id="nombre"
-												mold="rounded" width="200px" maxlength="150" />
-										</row>
-										<row>
-											<label value="Dirección" />
-											<textbox id="direccion"
-												mold="rounded" width="200px" maxlength="50" cols="40"
-												rows="5" />
-										</row>
-										<row>
-											<label value="Teléfono" />
-											<textbox id="telefono"
-												maxlength="10" mold="rounded" width="200px" />
-										</row>
-										<row>
-											<label value="Cuenta" />
-											<textbox id="username"
-												maxlength="45" mold="rounded" width="200px" />
-										</row>
-										<row>
-											<label value="Contraseña" />
-											<textbox id="pass"
-												maxlength="15" type="password" mold="rounded" width="200px" />
-										</row>
-										<row>
-											<div align="center">
-												<button id="registrar"
-													label="Guardar" />
-												<button id="buscar"
-													label="Buscar" />
-											</div>
-										</row>
-									</rows>
-								</grid>
-							</groupbox>
-						</panelchildren>
-					</panel>
-				</window>
+	<window border="normal" width="100%" title="Registro de Clientes">
+    <grid hflex="1"> <!-- hflex="1" - available width inside parent (window) -->
+        <columns visible="false">
+            <column/><!-- define 2 columns to enable auxhead/er -->
+            <column/>
+            <column/><!-- define 2 columns to enable auxhead/er -->
+            <column/>
+        </columns>
+        <auxhead>
+            <auxheader colspan="6" label="Informacion general" style="font-size:16px" />
+        </auxhead>
+        <rows>
+            <row>
+                Cedula: <textbox id="cedula" hflex="1" constraint="no empty"/>
+                Nombres: <textbox id="nombre"  hflex="1" constraint="no empty"/>                
+            </row>
+           
+            <row >
+            	Direccion: <textbox id="direccion" hflex="1" constraint="no empty"/>
+                Telefono: <textbox id="telefono"  hflex="1" constraint="no empty"/>
+                
+            </row>
+            <row>
+            	Username: <textbox id="username" hflex="1" constraint="no empty"/>
+                
+            </row>
+            <row>
+            	Password: <textbox id="pass" type="password" hflex="1" constraint="no empty"/>
+                Reingrese Password: <textbox type="password" hflex="1" constraint="no empty"/>
+            </row>
+           
+            <row spans="2" align="right">
+                <hlayout>
+                    <button id="resetButton" label="Reset" />
+                    <button id="submitButton" label="Submit" disabled="true"/>
+                </hlayout>
+            </row>
+        </rows>
+    </grid>
+</window>
 </zk>

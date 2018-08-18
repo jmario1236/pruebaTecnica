@@ -1,30 +1,27 @@
 <?page title="VideoCapitol - Inicio" contentType="text/html;charset=UTF-8"?>
 <?link rel="stylesheet" type="text/css"	href="/assets/css/main.css" ?>
 <zk>
-	<window border="none" width="100%" height="100%"
+	<window border="none" width="100%" height="100%" title="Video Capitol - Bienvenido"
 					id="windowInicio"
-					>
-		<borderlayout height="100%" width="100%">
-			<north size="18%" border="0">
-		        <borderlayout height="100%" width="100%">
-		        	<west size="70%" border="0" style="background:#008db7;" ></west>
-		        	<east size="30%" border="0"  style="background:#008db7;" >
-		        		<hlayout vflex="1" spacing="15px">
-		        			<button label="Iniciar Sesion" />
-		        			<button label="Registrarse" />
+					apply="com.xoftixtest.videocapitol.controller.InicioController">
+		<borderlayout height="100%" width="100%" >
+			<north size="10%" border="0" style="background:#008db7;">
+		        <hlayout vflex="1" spacing="15px">
+		        			<button label="Inicio"  id="index" onClick='frameCentral.src = "listarPeliculas.zul"'/>
+		        			<button label="Iniciar Sesion"  id="login" onClick='frameCentral.src = "login.zul"'/>
+		        			<button label="Registrarse" id="navRegistro"/>
 		        		</hlayout>
-		        	</east>
-		        </borderlayout>
 		    </north>
-		    <south border="0" style="background:#112f37;color:white;">
+		    <south size="5%" border="0" style="background:#112f37;color:white;">
 		    	<vbox align="center" pack="center" height="90%" width="100%">
 		    		<div style="background:#112f37;color:white;">VideoCapitol - 2018</div>
 		    	</vbox>
 		        
 		    </south>
-		    <center border="0">
-		        <div>C</div>
-		    </center>
+		    <center vflex="1">
+				<include id="frameCentral" src="listarPeliculas.zul"
+					width="100%" height="100%" />
+			</center>
 		    
 			
 		</borderlayout>			

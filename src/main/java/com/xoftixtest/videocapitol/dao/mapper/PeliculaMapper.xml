@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper
+		PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+		"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.xoftixtest.videocapitol.dao.mapper.PeliculaMapper">
+
+<resultMap id="movieResult" type="Pelicula">
+		<result property="id" column="id" />
+		<result property="titulo" column="titulo" />
+		<result property="descripcion" column="descripcion" />
+		<result property="actores" column="actores" />
+		<result property="director" column="director" />
+		<result property="cantidad" column="cantidad" />
+</resultMap>
+
+<insert id="insertar" parameterType="Pelicula" useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO PELICULA ( titulo, descripcion, actores,
+		director, cantidad )
+		VALUES ( #{titulo}, #{descripcion}, #{actores},
+		#{director}, #{cantidad} )
+</insert>
+
+
+
+
+<select id="busquedaParametrizada" resultMap="movieResult">
+		SELECT
+		p.id,
+		p.titulo,
+		p.descripcion,
+		p.actores,
+		p.director,
+		p.cantidad
+		FROM PELICULA p
+		<where>
+			<if test="titulo != null">
+				pelicula.titulo like #{titulo}
+			</if>
+			<if test="director != null">
+				AND pelicula.director like #{director}
+			</if>
+		</where>
+	</select>
+
+
+
+
+<select id="listar" resultMap="movieResult">
+		SELECT
+		p.id,
+		p.titulo,
+		p.descripcion,
+		p.actores,
+		p.director,
+		p.cantidad
+		FROM PELICULA p
+</select>
+
+<update id="actualizar" parameterType="Pelicula">
+		UPDATE PELICULA
+		SET
+		titulo = #{titulo},
+		descripcion = #{descripcion},
+		actores = #{actores},
+		director = #{director},
+		cantidad = #{cantidad}
+		WHERE id = #{id}
+</update>
+
+
+</mapper>

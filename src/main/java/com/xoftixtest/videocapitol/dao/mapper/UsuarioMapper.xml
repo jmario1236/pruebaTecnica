@@ -22,6 +22,49 @@
 		#{cedula}, #{nombre}, #{direccion}, #{telefono} )
 </insert>
 
+
+<select id="ingresar" resultMap="userResult" parameterType="Usuario">
+		SELECT
+		user.id,
+		user.username,
+		user.pass,
+		user.tipo_user,
+		user.cedula,
+		user.nombre,
+		user.direccion,
+		user.telefono
+		FROM USUARIO user
+		WHERE user.username = #{username} AND user.pass = #{pass}
+</select>
+
+<select id="busquedaParametrizada" resultMap="userResult">
+		SELECT
+		user.id,
+		user.username,
+		user.pass,
+		user.tipo_user,
+		user.cedula,
+		user.nombre,
+		user.direccion,
+		user.telefono
+		FROM USUARIO user
+		<where>
+			<if test="cedula != null">
+				user.cedula like #{cedula}
+			</if>
+			<if test="nombre != null">
+				AND user.nombre like #{nombre}
+			</if>
+			<if test="direccion != null">
+				AND user.direccion like #{direccion}
+			</if>
+			<if test="telefono != null">
+				AND user.telefono like #{telefono}
+			</if>
+		</where>
+	</select>
+
+
 <select id="buscar" resultMap="userResult">
 		SELECT
 		user.id,
@@ -35,5 +78,37 @@
 		FROM USUARIO user
 		WHERE user.cedula = #{cedula}
 	</select>
+
+<select id="listar" resultMap="userResult">
+		SELECT
+		user.id,
+		user.username,
+		user.pass,
+		user.tipo_user,
+		user.cedula,
+		user.nombre,
+		user.direccion,
+		user.telefono
+		FROM USUARIO user
+</select>
+
+<update id="actualizar" parameterType="Usuario">
+		UPDATE USUARIO
+		SET
+		cedula = #{cedula},
+		nombre = #{nombre},
+		telefono = #{telefono},
+		direccion = #{direccion}
+		WHERE id = #{id}
+</update>
+
+<select id="siExiste" parameterType="java.lang.String" resultType="java.lang.Boolean">
+		SELECT count(1) != 0 AS existe
+		FROM USUARIO
+		WHERE cedula = #{cedula}
+</select>
+
+
+
 
 </mapper>

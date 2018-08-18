@@ -8,7 +8,6 @@ import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Textbox;
 
-import com.xoftixtest.videocapitol.dao.mapper.UsuarioMapper;
 import com.xoftixtest.videocapitol.models.Usuario;
 import com.xoftixtest.videocapitol.service.UsuarioService;
 

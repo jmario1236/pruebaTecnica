@@ -1,1 +1,10 @@
 INSERT INTO USUARIO( username, pass, tipo_user, cedula, nombre, direccion, telefono) VALUES ('juliouser', 'julio123',0,'1143354982','julio','mzdl5','23422424');
+INSERT INTO USUARIO( username, pass, tipo_user, cedula, nombre, direccion, telefono) VALUES ('mariouser', 'julio123',0,'1143354983','mario','mzdl5','23422424');
+INSERT INTO USUARIO( username, pass, tipo_user, cedula, nombre, direccion, telefono) VALUES ('pepitouser', 'julio123',0,'1143354984','pepito','mzdl5','23422424');
+INSERT INTO USUARIO( username, pass, tipo_user, cedula, nombre, direccion, telefono) VALUES ('fulanouser', 'julio123',0,'1143354985','fulano','mzdl5','23422424');
+INSERT INTO PELICULA( titulo, descripcion, actores, director, cantidad) VALUES ('Hotel Transilvania 3', 'Pelicula animada para todas las edades','Persona X, Y, Z','Steven spilberg',5);
+INSERT INTO PELICULA( titulo, descripcion, actores, director, cantidad) VALUES ('Winnie Pooh', 'Pelicula animada para todas las edades','Persona X, Y, Z','Steven spilberg',5);
+INSERT INTO PELICULA( titulo, descripcion, actores, director, cantidad) VALUES ('Los increibles', 'Pelicula animada para todas las edades','Persona X, Y, Z','Steven spilberg',5);
+INSERT INTO PELICULA( titulo, descripcion, actores, director, cantidad) VALUES ('Avenger', 'Pelicula animada para todas las edades','Persona X, Y, Z','Steven spilberg',5);
+INSERT INTO PELICULA( titulo, descripcion, actores, director, cantidad) VALUES ('Dead pool', 'Pelicula animada para todas las edades','Persona X, Y, Z','Steven spilberg',5);
+INSERT INTO PELICULA( titulo, descripcion, actores, director, cantidad) VALUES ('Hotel Transilvania 2', 'Pelicula animada para todas las edades','Persona X, Y, Z','Steven spilberg',5);

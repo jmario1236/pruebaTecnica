@@ -1,49 +1,34 @@
 
 <zk>
-
-<panel id="panel" framable="true" width="250px" height="300px"
-	title="Panel"
-	border="normal"
-	>
-<panelchildren>
-<borderlayout height="100%" width="100%">
-
-<center>
-<borderlayout width="100px" height="100px">
-  
-    <south size="40%">
+    <window border="none" width="100%" height="100%" apply="com.xoftixtest.videocapitol.controller.PeliculaController">
+    <paging id="pg" pageSize="4"/>
+    <grid id="listadoView" mold="paging" paginal="${pg}">
         
-    </south>
-  
-    <east size="60%">
-        <vlayout>
+                            <columns>
+                                <column label="Titulo" />
+                                <column label="Descripción" />
+                                <column label="Actores" />
+                                <column label="Director" />
+                                <column width="150px" label="#Ejemplares" />
+                                <column width="150px" label="Accion" />
+                            </columns>
+                            <template name="model">
+                                <row>
+                                    <label value="${each.titulo}" />
+                                    <label value="${each.descripcion}" />
+                                    <label value="${each.actores}" />
+                                    <label value="${each.director}" />
+                                    <label width="150px" value="${each.cantidad}" />
+                                    <hbox align="center">
+                                        <button label="Reservar"
+                                            disabled="${each.cantidad==0}"
+                                            forward="listadoView.onButtonClick(${each})"
+                                            autodisable="self" />
+                                    </hbox>
+                                </row>
+                            </template>
+                          
+    </grid>
+</window>
 
-<label value="Cedula :" />
-<label style="word-wrap: break-word;" value="Cedsdfsdfsdfsdfssdfsdfsdfsula" />
-
-
-<label value="Cedula :" />
-<label value="Cedula" />
-
-
-<label value="Cedula :" />
-<label value="Cedula" />
-
-</vlayout>
-    </east>
-    <west size="40%">
-       
-    </west>
-</borderlayout>
-
-</center>
-<south size="15%">
-<vbox align="center" pack="center" height="100%" width="100%">
-<button label="Rerservar!" />
-</vbox>
-</south>
-
-</borderlayout>
-</panelchildren>	
-</panel>
 </zk>
